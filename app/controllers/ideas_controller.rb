@@ -16,7 +16,7 @@ class IdeasController < ApplicationController
     @idea_category = IdeaCategory.new
   end
 
-  def create
+  def create   #URLからパラメータ取得する
     @idea_category = IdeaCategory.new(idea_categry_params)
     if @idea_category.valid? && Category.exists?(name: @idea_category.name)
       @idea = Idea.new(idea_params)
